@@ -4,30 +4,30 @@ export default class NthBaiTap extends Component {
     constructor(props){
         super(props);
         this.state={
-            nthDSA : [
+            nthInitialState  : [
                 {
-                    nthProductId: "A1",
-                    nthProductName: "Áo Xanh",
+                    nthProductId: "P001",
+                    nthProductName: "IPhone 10",
                     nthQuantity: 15,
                     nthPrice: 1000
                 },
                 {
-                    nthProductId: "A2",
-                    nthProductName: "Áo Đỏ",
-                    nthQuantity: 100,
-                    nthPrice: 200
+                    nthProductId: "P002",
+                    nthProductName: "IPhone 11",
+                    nthQuantity: 20,
+                    nthPrice: 1250
                 },
                 {
-                    nthProductId: "A3",
-                    nthProductName: "Áo Tím",
-                    nthQuantity: 34,
-                    nthPrice: 300
+                    nthProductId: "P003",
+                    nthProductName: "IPhone 12",
+                    nthQuantity: 10,
+                    nthPrice: 1500
                 },
                 {
-                    nthProductId: "A4",
-                    nthProductName: "Áo Vàng",
-                    nthQuantity: 45,
-                    nthPrice: 455
+                    nthProductId: "P004",
+                    nthProductName: "IPhone 13",
+                    nthQuantity: 15,
+                    nthPrice: 2000
                 }
             ],
             
@@ -35,8 +35,8 @@ export default class NthBaiTap extends Component {
     }
   render() {
     // hiển thị danh sách sản phâme
-    let nthDSA = this.state.nthDSA
-    let nthElement =  nthDSA.map((nthItem)=>{
+    let nthInitialState = this.state.nthInitialState
+    let nthElement =  nthInitialState.map((nthItem)=>{
         return(
           <tr>
             <td>{nthItem.nthProductId}</td>
