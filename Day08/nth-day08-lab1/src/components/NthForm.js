@@ -43,10 +43,17 @@ export default class NthForm extends Component {
   // Gửi dữ liệu khi nhấn "Lưu"
   handleSubmit = (event) => {
     event.preventDefault();
+    const { nthID, ...otherState } = this.state;
+
+    if (!nthID || nthID.trim() === "") {
+        alert("Vui lòng nhập mã sinh viên (nthID).");
+        return;
+    }
+
     if (this.props.isAddingNew) {
-      this.props.onNthHandleSaveNew({ ...this.state, nthID: `SV${Date.now()}` }); // Tạo mã SV tự động
+        this.props.onNthHandleSaveNew({ nthID, ...otherState });
     } else {
-      this.props.onNthHandleUpdate(this.state);
+        this.props.onNthHandleUpdate({ nthID, ...otherState });
     }
   };
 
@@ -56,6 +63,18 @@ export default class NthForm extends Component {
         <div className="card-body">
           <h3 className="card-title">{this.props.isAddingNew ? "Thêm sinh viên mới" : "Chỉnh sửa thông tin"}</h3>
           <form onSubmit={this.handleSubmit}>
+
+            {/* Nhập mã sinh viên khi thêm mới */}
+            {this.props.isAddingNew && (
+              <div className="form-group row">
+                <label className="col-sm-3 col-form-label">Mã sinh viên</label>
+                <div className="col-sm-9">
+                  <input type="text" className="form-control" name="nthID" value={this.state.nthID} onChange={this.handleChange} required />
+                </div>
+              </div>
+            )}
+
+            {/* Hiển thị mã sinh viên nhưng không cho sửa khi chỉnh sửa */}
             {!this.props.isAddingNew && (
               <div className="form-group row">
                 <label className="col-sm-3 col-form-label">Mã sinh viên</label>
@@ -64,6 +83,7 @@ export default class NthForm extends Component {
                 </div>
               </div>
             )}
+
             <div className="form-group row">
               <label className="col-sm-3 col-form-label">Tên sinh viên</label>
               <div className="col-sm-9">

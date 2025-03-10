@@ -9,10 +9,11 @@ class NthApp extends Component {
     super(props);
     this.state = {
       nthStudents: [
-        { nthID: "SV002", nthStudentName: "Nguyễn Trọng Hưng", nthAge: 19, nthGender: "Nam", nthBirthday: "01/02/2005", nthBirthPlace: "HN", nthAddress: "Gia Lâm" },
-        { nthID: "SV001", nthStudentName: "Phạm Tuấn Anh", nthAge: 19, nthGender: "Nam", nthBirthday: "05/11/2005", nthBirthPlace: "QN", nthAddress: "Yên Xá" },
+        { nthID: "SV001", nthStudentName: "Nguyễn Trọng Hưng", nthAge: 19, nthGender: "Nam", nthBirthday: "01/02/2005", nthBirthPlace: "HN", nthAddress: "Gia Lâm" },
+        { nthID: "SV002", nthStudentName: "Phạm Tuấn Anh", nthAge: 19, nthGender: "Nam", nthBirthday: "05/11/2005", nthBirthPlace: "QN", nthAddress: "Yên Xá" },
         { nthID: "SV003", nthStudentName: "Nguyễn Hữu Tuấn", nthAge: 19, nthGender: "Nam", nthBirthday: "04/09/2005", nthBirthPlace: "HD", nthAddress: "Hải Dương" },
-        { nthID: "SV004", nthStudentName: "Nguyễn Gia Duy", nthAge: 20, nthGender: "Nam", nthBirthday: "13/01/2005", nthBirthPlace: "HD", nthAddress: "Yên Xá" }
+        { nthID: "SV004", nthStudentName: "Nguyễn Gia Duy", nthAge: 20, nthGender: "Nam", nthBirthday: "13/01/2005", nthBirthPlace: "HD", nthAddress: "Yên Xá" },
+        { nthID: "SV005", nthStudentName: "Trần Thái Linh", nthAge: 20, nthGender: "Nữ", nthBirthday: "10/01/2005", nthBirthPlace: "HCM", nthAddress: "Long Thành" }
       ],
       filteredStudents: [],
       selectedStudent: null,
