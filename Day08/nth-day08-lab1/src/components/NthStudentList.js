@@ -1,52 +1,35 @@
-import React, { Component } from "react";
-import NthStudent from "./NthStudent";
+import React, { Component } from 'react';
+import NthStudent from './NthStudent';
 
-class NthStudentList extends Component {
-    constructor(props){
-        super(props);
-
-    }
-        // Hàm xử lý sự kiện xêm
-    nthHandleView = (nthStudent)=>{
-        // Chuyển dữ liệu lên nthApp
-        this.props.onNthHandleView(nthStudent);
-    }
-
-
+export default class NthStudentList extends Component {
   render() {
-    // lấy dữ liệu trong props từ nthApp chuyển xuống
-    let {renderNthStudents} = this.props;
-    console.log("List:",renderNthStudents);
-    
-    // chuyển dữ liệu vào NthStudent để hiển thị
-    let nthElementStudent = renderNthStudents.map((nthItem,index)=>{
-        return <NthStudent key={index} renderNthStudent={nthItem} onNthHandleView={this.nthHandleView} />
-    })
-    return (
-      <div className="card-body">
-        <h3 className="card-title">Danh sách sinh viên</h3>
-        <div className="table-responsive pt-3">
-          <table className="table table-bordered">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Mã sinh viên</th>
-                <th>Tên sinh viên</th>
-                <th>Tuổi</th>
-                <th>Giới tính</th>
-                <th>Hành động</th>
-              </tr>
-            </thead>
-            <tbody>
+    let { renderNthStudents, onNthHandleView, onNthHandleEdit, onNthHandleDelete } = this.props;
 
-             {nthElementStudent}
-              
-            </tbody>
-          </table>
-        </div>
-      </div>
+    return (
+      <table className="table table-bordered">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Mã SV</th>
+            <th>Họ tên</th>
+            <th>Tuổi</th>
+            <th>Giới tính</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          {renderNthStudents.map((student, index) => (
+            <NthStudent
+              key={student.nthID}
+              nthIndex={index + 1}
+              renderNthStudent={student}
+              onNthHandleView={onNthHandleView}
+              onNthHandleEdit={onNthHandleEdit}
+              onNthHandleDelete={onNthHandleDelete}
+            />
+          ))}
+        </tbody>
+      </table>
     );
   }
 }
-
-export default NthStudentList;
