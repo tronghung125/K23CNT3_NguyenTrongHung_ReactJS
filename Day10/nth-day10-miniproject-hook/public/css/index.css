@@ -1,0 +1,103 @@
+/* Định dạng toàn bộ trang */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Màu nền sáng nhẹ để dễ nhìn */
+}
+
+/* Kiểu cho các nút */
+button {
+    margin: 5px;
+    padding: 12px 20px; /* Nút to hơn và dễ nhấn */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px; /* Bo góc cho nút */
+    font-size: 16px; /* Đặt kích thước font cho nút */
+    background-color: #3498db; /* Màu nền nút */
+    color: white; /* Màu chữ trắng */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Thêm hiệu ứng khi hover */
+}
+
+/* Hiệu ứng khi hover vào nút */
+button:hover {
+    background-color: #2980b9; /* Màu nền thay đổi khi hover */
+    transform: scale(1.05); /* Nút phóng to nhẹ khi hover */
+}
+
+/* Kiểu cho danh sách Todo */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+/* Kiểu cho mỗi item trong danh sách Todo */
+li {
+
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 12px;
+    border-bottom: 1px solid rgb(202, 202, 202);
+
+}
+
+/* Hiệu ứng hover khi di chuột qua item */
+li:hover {
+    color: black;
+    background-color: #f9f9f9; /* Thay đổi màu nền khi hover */
+}
+
+/* Kiểu cho các phần tử của Theme (light/dark) */
+.light {
+    background: white;
+    color: black;
+}
+
+.dark {
+    background: black;
+    color: white;
+}
+
+
+
+/* Kiểu cho input nhập công việc */
+input[type="text"] {
+    padding: 12px;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Hiệu ứng khi focus vào input */
+input[type="text"]:focus {
+    border-color: #3498db; /* Đổi màu viền khi focus */
+}
+
+/* Kiểu cho nút Thêm */
+button[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng khi hover vào nút Thêm */
+button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+/* Tạo lớp CSS cho các từ khóa cần làm nổi bật */
+.highlight {
+    color: #e91e63; /* Màu hồng */
+    font-weight: bold; /* In đậm để tạo sự nổi bật */
+  }
+  
