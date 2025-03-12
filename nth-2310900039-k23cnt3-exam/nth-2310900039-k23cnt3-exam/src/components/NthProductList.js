@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const NthProductList = ({ products, removeProduct, updateProduct }) => {
   const [editProductId, setEditProductId] = useState(null);
-  const [updatedInfo, setUpdatedInfo] = useState({ nthpname: "", nthpquantity: "", nthpprice: "" });
+  const [updatedInfo, setUpdatedInfo] = useState({nthpname: "", nthpquantity: "", nthpprice: "" });
 
   // Bắt đầu chỉnh sửa
   const handleEdit = (product) => {
@@ -34,7 +34,7 @@ const NthProductList = ({ products, removeProduct, updateProduct }) => {
             ) : (
               // Hiển thị thông tin sản phẩm
               <>
-                {product.nthpname} - Số lượng: {product.nthpquantity} - Giá: {product.nthpprice}đ
+                {product.nthpid} - {product.nthpname} - Số lượng: {product.nthpquantity} - Giá: {product.nthpprice}đ
                 <div className="d-flex gap-1">
                   <button className="btn btn-warning me-2" onClick={() => handleEdit(product)}>Sửa</button>
                   <button className="btn btn-danger" onClick={() => removeProduct(product.nthpid)}>Xóa</button>
