@@ -4,7 +4,7 @@ import NthProductAdd from "./components/NthProductAdd";
 
 const NthApp = () => {
   const [products, setProducts] = useState([
-    { nthpid: "2310900039", nthpname: "Nguyễn Trọng Hưng", nthpquantity: "CNTT", nthpprice: "K23CNTT3 " },
+    { nthpid: "2310900039", nthpname: "Nguyễn Trọng Hưng", nthpquantity: "CNTT", nthpprice: "Vô giá " },
     { nthpid: "2", nthpname: "Điện thoại ", nthpquantity: "20", nthpprice: "800000" },
     { nthpid: "3", nthpname: "Tai nghe ", nthpquantity: "30", nthpprice: "500000" },
   ]);
@@ -27,8 +27,8 @@ const NthApp = () => {
   return (
     <div className="container mt-4">
       <h1 className="text-primary">Quản lý Sản Phẩm - Nguyễn Trọng Hưng - K23CNT3</h1>
-      <NthProductList products={products} removeProduct={removeProduct} updateProduct={updateProduct} />
       <NthProductAdd addProduct={addProduct} />
+      <NthProductList products={products} removeProduct={removeProduct} updateProduct={updateProduct} />
     </div>
   );
 };
