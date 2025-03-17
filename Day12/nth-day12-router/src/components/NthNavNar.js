@@ -106,6 +106,40 @@ export default function NthNavNar() {
             Create User
           </Link>
         </li>
+        <li style={{ display: "inline" }}>
+          <Link
+            to="/new"
+            style={{
+              textDecoration: "none",
+              color: "white",
+              fontWeight: "bold",
+              padding: "10px 15px",
+              borderRadius: "5px",
+              transition: "all 0.3s ease",
+            }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#555")}
+            onMouseOut={(e) => (e.target.style.backgroundColor = "transparent")}
+          >
+            New
+          </Link>
+        </li>
+        <li style={{ display: "inline" }}>
+          <Link
+            to="/product"
+            style={{
+              textDecoration: "none",
+              color: "white",
+              fontWeight: "bold",
+              padding: "10px 15px",
+              borderRadius: "5px",
+              transition: "all 0.3s ease",
+            }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#555")}
+            onMouseOut={(e) => (e.target.style.backgroundColor = "transparent")}
+          >
+            Product
+          </Link>
+        </li>
       </ul>
     </nav>
   );
