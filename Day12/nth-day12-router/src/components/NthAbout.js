@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function NthAbout() {
   return (
-    <div style={{ maxWidth: '800px', margin: 'auto', padding: '20px' }}>
-      <h3 style={{ textAlign: 'center', marginBottom: '20px' }}>Giới Thiệu</h3>
+    <div style={{ maxWidth: '800px', margin: 'auto', padding: '20px', fontFamily:'Time New Roman', fontWeight:'bold'}}>
+      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Giới Thiệu</h2>
       <h1 style={{textAlign: 'center', marginBottom: '20px'}}>Điều gì làm nên một chiếc xe máy cổ điển?</h1>
       <p style={{ textAlign: 'justify', marginBottom: '15px' }}>
         Có rất nhiều người trong chúng ta tò mò về Xe đạp cổ điển.
