@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "https://67d922b700348dd3e2a9b681.mockapi.io/k23cnt3_nguyentronghung/nth_users";
+const nthApiOnline = "https://67d922b700348dd3e2a9b681.mockapi.io/k23cnt3_nguyentronghung/nth_users";
 
 function NthCreateUser() {
     const [user, setUser] = useState({
@@ -26,7 +26,7 @@ function NthCreateUser() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(API_URL, user);
+            await axios.post(nthApiOnline, user);
             alert("Người dùng đã được tạo thành công!");
             navigate("/users"); // Quay lại danh sách người dùng
         } catch (err) {

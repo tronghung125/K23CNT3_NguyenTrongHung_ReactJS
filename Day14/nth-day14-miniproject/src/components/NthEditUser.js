@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
-const API_URL = "https://67d922b700348dd3e2a9b681.mockapi.io/k23cnt3_nguyentronghung/nth_users";
+const nthApiOnline = "https://67d922b700348dd3e2a9b681.mockapi.io/k23cnt3_nguyentronghung/nth_users";
 
 function NthEditUser() {
     const { id } = useParams();
@@ -23,7 +23,7 @@ function NthEditUser() {
             return;
         }
 
-        axios.get(`${API_URL}/${id}`)
+        axios.get(`${nthApiOnline}/${id}`)
             .then((res) => {
                 if (res.data && Object.keys(res.data).length > 0) {
                     setUser(res.data);
@@ -51,7 +51,7 @@ function NthEditUser() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`${API_URL}/${id}`, user);
+            await axios.put(`${nthApiOnline}/${id}`, user);
             alert("Cập nhật thành công!");
             navigate("/users");
         } catch (err) {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "https://67d922b700348dd3e2a9b681.mockapi.io/k23cnt3_nguyentronghung/nth_users";
+const nthApiOnline = "https://67d922b700348dd3e2a9b681.mockapi.io/k23cnt3_nguyentronghung/nth_users";
 
 function NthListUsers() {
     const [users, setUsers] = useState([]);
@@ -11,7 +11,7 @@ function NthListUsers() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(API_URL)
+        axios.get(nthApiOnline)
             .then((response) => {
                 console.log("Dữ liệu API:", response.data);
                 setUsers(response.data);
@@ -27,7 +27,7 @@ function NthListUsers() {
     const handleDelete = async (id) => {
         if (window.confirm("Bạn có chắc muốn xóa người dùng này?")) {
             try {
-                await axios.delete(`${API_URL}/${id}`);
+                await axios.delete(`${nthApiOnline}/${id}`);
                 setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
                 alert("Xóa thành công!");
             } catch (error) {
